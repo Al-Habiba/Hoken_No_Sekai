@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?PowerDesigner signature="Workspace" version="15.1.0.2850"?>
+<!-- Veuillez ne pas modifier ce fichier -->
+
+<Workspace>
+	<Local Expanded="Yes">
+		<Model Expanded="Yes" ID="{1136A8BF-354B-4024-8F8A-AF6976E97E4B}" Name="MCD_Hoken_No_Sekai" Selected="Yes" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="MCD_Hoken_No_Sekai.mcd"/>
+		<Model Expanded="Yes" ID="{52BE88E1-B8FD-47DC-99E0-9124A0982C88}" Name="MLD_Hoken_No_Sekai" Type="{5F45F978-C4F3-4E35-A3FC-AF3318663A0F}" URL="MLD_Hoken_No_Sekai.mld"/>
+		<Model Expanded="Yes" ID="{A34E196A-541D-425C-A6A0-4140B4E17568}" Name="MPD_Hoken_No_Sekai" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="MPD_Hoken_No_Sekai.mpd"/>
+	</Local>
+	<BrowserModule Name="Référentiel"/>
+</Workspace>

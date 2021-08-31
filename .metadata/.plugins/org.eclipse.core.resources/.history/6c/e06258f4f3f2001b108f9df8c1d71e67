@@ -1,0 +1,627 @@
+package com.aby;
+
+import java.awt.EventQueue;
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import java.awt.Color;
+import javax.swing.AbstractListModel;
+import javax.swing.ListSelectionModel;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.JFormattedTextField;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
+import javax.swing.JCheckBox;
+import javax.swing.JButton;
+import javax.swing.JToggleButton;
+import javax.swing.JFrame;
+import java.awt.Dimension;
+import java.awt.Rectangle;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
+import javax.swing.JMenuBar;
+
+public class Affaire_Nouvelle {
+
+	JFrame frame;
+	private JPanel allButton ;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_6;
+	private JTextField textField_7;
+	private JTextField textField_8;
+	private JTextField textField_9;
+	private JLabel l_Police;
+	private JTextField textField_5;
+	private JTextField textField_10;
+	private JTextField textField_11;
+	private JTextField textField_12;
+	private JTextField textField_13;
+	private JTextField textField_14;
+	private JTextField textField_15;
+	private JTextField textField_16;
+	private JTextField textField_17;
+	private JTextField textField_18;
+	private JTextField textField_19;
+	private JTextField textField_20;
+	private JTextField textField_21;
+	private JTextField textField_22;
+	private JTextField textField_23;
+	private JTextField textField_24;
+	private JTextField textField_25;
+	private JTextField textField_26;
+	private JTextField textField_27;
+	private JTextField textField_28;
+	private JTextField textField_29;
+	private JTextField textField_30;
+	private JTextField textField_31;
+	private JTextField textField_32;
+	private JTextField textField_33;
+	private JTextField textField_34;
+	private JTextField textField_35;
+	private JTextField textField_36;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					for (LookAndFeelInfo info:UIManager.getInstalledLookAndFeels()){
+						if ("Nimbus".equals(info.getName())) {
+							UIManager.setLookAndFeel(info.getClassName());
+							break;
+						}
+					}
+				}catch (Exception e) {}	
+				
+				
+				try {
+					Affaire_Nouvelle window = new Affaire_Nouvelle();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Affaire_Nouvelle() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Affaire_Nouvelle.class.getResource("/images/car.png")));
+		frame.setBackground(Color.WHITE);
+		//frame.setBounds(new Rectangle(0, 0, 2147483645, 2147483645));
+		frame.setSize(new Dimension(1298, 788));
+		frame.setTitle("NOUVELLE AFFAIRE");
+		frame.setResizable(false);
+	//	frame.setBounds(100, 100, 1074, 760);
+		
+		frame.getContentPane().setLayout(null);
+		//frame = new JPanel();
+		
+		
+		Object lists[] = {"TALONS JAUNE","TALON VERT"} ;
+		JComboBox comboBox = new JComboBox(lists);
+		comboBox.setBounds(166, 14, 129, 21);
+		frame.getContentPane().add(comboBox);
+		
+		JLabel l_assure = new JLabel("Assure");
+		l_assure.setBounds(25, 76, 45, 27);
+		frame.getContentPane().add(l_assure);
+		
+		JLabel lblNewLabel_1 = new JLabel("Profession");
+		lblNewLabel_1.setBounds(25, 106, 62, 27);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel l_Adresse = new JLabel("Adresse");
+		l_Adresse.setBounds(25, 136, 76, 27);
+		frame.getContentPane().add(l_Adresse);
+		
+		textField = new JTextField();
+		textField.setBounds(152, 76, 182, 27);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(152, 106, 182, 27);
+		frame.getContentPane().add(textField_1);
+		textField_1.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(152, 136, 182, 27);
+		frame.getContentPane().add(textField_2);
+		textField_2.setColumns(10);
+		
+		JLabel type = new JLabel("TYPE DE PRODUCTION");
+		type.setBounds(25, 14, 142, 27);
+		frame.getContentPane().add(type);
+		
+		JLabel l_Vehicule = new JLabel("Vehicule");
+		l_Vehicule.setBounds(25, 166, 76, 27);
+		frame.getContentPane().add(l_Vehicule);
+		
+		JLabel l_genre = new JLabel("Genre");
+		l_genre.setBounds(25, 196, 45, 27);
+		frame.getContentPane().add(l_genre);
+		
+		JLabel l_Marque = new JLabel("Marque");
+		l_Marque.setBounds(25, 226, 78, 27);
+		frame.getContentPane().add(l_Marque);
+		
+		JLabel l_Type = new JLabel("Type");
+		l_Type.setBounds(25, 256, 45, 27);
+		frame.getContentPane().add(l_Type);
+		
+		JLabel l_Immat = new JLabel("Immat");
+		l_Immat.setVerticalAlignment(SwingConstants.BOTTOM);
+		l_Immat.setBounds(25, 286, 45, 27);
+		frame.getContentPane().add(l_Immat);
+		
+		l_Police = new JLabel("Police");
+		l_Police.setBounds(25, 316, 45, 27);
+		frame.getContentPane().add(l_Police);
+		
+		JLabel l_effet = new JLabel("Effet");
+		l_effet.setBounds(25, 376, 45, 27);
+		frame.getContentPane().add(l_effet);
+		
+		JLabel l_echeance = new JLabel("Ech\u00E9ance");
+		l_echeance.setBounds(25, 406, 76, 27);
+		frame.getContentPane().add(l_echeance);
+		
+		textField_3 = new JTextField();
+		textField_3.setBounds(152, 166, 182, 27);
+		frame.getContentPane().add(textField_3);
+		textField_3.setColumns(10);
+		
+		textField_4 = new JTextField();
+		textField_4.setBounds(152, 196, 182, 27);
+		frame.getContentPane().add(textField_4);
+		textField_4.setColumns(10);
+		
+		textField_6 = new JTextField();
+		textField_6.setBounds(152, 226, 182, 27);
+		frame.getContentPane().add(textField_6);
+		textField_6.setColumns(10);
+		
+		textField_7 = new JTextField();
+		textField_7.setBounds(152, 256, 182, 27);
+		frame.getContentPane().add(textField_7);
+		textField_7.setColumns(10);
+		
+		textField_8 = new JTextField();
+		textField_8.setBounds(152, 286, 182, 27);
+		frame.getContentPane().add(textField_8);
+		textField_8.setColumns(10);
+		
+		textField_9 = new JTextField();
+		textField_9.setBounds(152, 316, 182, 27);
+		frame.getContentPane().add(textField_9);
+		textField_9.setColumns(10);
+		
+		JFormattedTextField formattedTextField = new JFormattedTextField();
+		formattedTextField.setBounds(152, 406, 54, 27);
+		frame.getContentPane().add(formattedTextField);
+		
+		JFormattedTextField formattedTextField_1 = new JFormattedTextField();
+		formattedTextField_1.setBounds(152, 376, 54, 27);
+		frame.getContentPane().add(formattedTextField_1);
+		
+		JLabel l_Attestation = new JLabel("Attestation");
+		l_Attestation.setBounds(25, 346, 76, 27);
+		frame.getContentPane().add(l_Attestation);
+		
+		textField_5 = new JTextField();
+		textField_5.setBounds(152, 346, 182, 27);
+		frame.getContentPane().add(textField_5);
+		textField_5.setColumns(10);
+		
+		JLabel l_Groupe = new JLabel("GROUPE");
+		l_Groupe.setBounds(305, 14, 45, 27);
+		frame.getContentPane().add(l_Groupe);
+		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setForeground(new Color(255, 235, 205));
+		comboBox_1.setBackground(new Color(255, 218, 185));
+		comboBox_1.setBounds(444, 14, 98, 21);
+		frame.getContentPane().add(comboBox_1);
+		
+		JCheckBox chb1 = new JCheckBox("Flotte");
+		chb1.setBounds(370, 106, 93, 27);
+		frame.getContentPane().add(chb1);
+		
+		JCheckBox chb2 = new JCheckBox("Partenaire");
+		chb2.setBounds(370, 166, 93, 27);
+		frame.getContentPane().add(chb2);
+		
+		JCheckBox chb3 = new JCheckBox("Semi Remorque");
+		chb3.setBounds(370, 226, 129, 27);
+		frame.getContentPane().add(chb3);
+		
+		JLabel l_operateur = new JLabel("Operateur");
+		l_operateur.setBounds(872, 14, 75, 27);
+		frame.getContentPane().add(l_operateur);
+		
+		JLabel l_avenant = new JLabel("Avenant");
+		l_avenant.setBounds(872, 76, 75, 27);
+		frame.getContentPane().add(l_avenant);
+		
+		JLabel l_Energie = new JLabel("Energie");
+		l_Energie.setBounds(872, 136, 75, 27);
+		frame.getContentPane().add(l_Energie);
+		
+		
+		JLabel l_ff = new JLabel("Force Fiscale");
+		l_ff.setBounds(872, 106, 77, 27);
+		frame.getContentPane().add(l_ff);
+		
+		JLabel l_cv = new JLabel("Cat\u00E9gorie Vehicule");
+		l_cv.setBounds(872, 166, 121, 27);
+		frame.getContentPane().add(l_cv);
+		
+		JLabel l_tf = new JLabel("Tranche Fiscale");
+		l_tf.setBounds(872, 196, 100, 27);
+		frame.getContentPane().add(l_tf);
+		
+		JLabel l_np = new JLabel("Nombre Places");
+		l_np.setBounds(872, 226, 100, 27);
+		frame.getContentPane().add(l_np);
+		
+		JLabel l_tonnage = new JLabel("Tonnage");
+		l_tonnage.setBounds(872, 256, 70, 27);
+		frame.getContentPane().add(l_tonnage);
+		
+		JLabel l_cp = new JLabel("Cout de Police");
+		l_cp.setBounds(872, 286, 90, 27);
+		frame.getContentPane().add(l_cp);
+		
+		JLabel l_bonus = new JLabel("Bonus");
+		l_bonus.setBounds(872, 316, 45, 27);
+		frame.getContentPane().add(l_bonus);
+		
+		JLabel l_contact = new JLabel("Contact");
+		l_contact.setBounds(872, 346, 45, 27);
+		frame.getContentPane().add(l_contact);
+		
+		JLabel l_tel = new JLabel("Telephone");
+		l_tel.setBounds(872, 376, 78, 27);
+		frame.getContentPane().add(l_tel);
+		
+		JLabel lblNewLabel_12 = new JLabel("Visite Technique");
+		lblNewLabel_12.setBounds(872, 406, 100, 27);
+		frame.getContentPane().add(lblNewLabel_12);
+		
+		JCheckBox chb_auto = new JCheckBox("Auto Ecole");
+		chb_auto.setBounds(872, 436, 93, 27);
+		frame.getContentPane().add(chb_auto);
+		
+		textField_10 = new JTextField();
+		textField_10.setBounds(990, 14, 163, 27);
+		frame.getContentPane().add(textField_10);
+		textField_10.setColumns(10);
+		
+		textField_11 = new JTextField();
+		textField_11.setBounds(990, 76, 121, 27);
+		frame.getContentPane().add(textField_11);
+		textField_11.setColumns(10);
+		
+		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setBounds(990, 106, 106, 27);
+		frame.getContentPane().add(comboBox_2);
+		
+		textField_12 = new JTextField();
+		textField_12.setBounds(990, 136, 121, 27);
+		frame.getContentPane().add(textField_12);
+		textField_12.setColumns(10);
+		
+		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3.setBackground(new Color(255, 228, 196));
+		comboBox_3.setForeground(new Color(255, 255, 255));
+		comboBox_3.setBounds(990, 166, 163, 27);
+		frame.getContentPane().add(comboBox_3);
+		
+		JComboBox comboBox_4 = new JComboBox();
+		comboBox_4.setBounds(990, 196, 96, 27);
+		frame.getContentPane().add(comboBox_4);
+		
+		JComboBox comboBox_5 = new JComboBox();
+		comboBox_5.setBounds(990, 226, 54, 27);
+		frame.getContentPane().add(comboBox_5);
+		
+		JComboBox comboBox_6 = new JComboBox();
+		comboBox_6.setBounds(990, 256, 54, 27);
+		frame.getContentPane().add(comboBox_6);
+		
+		textField_13 = new JTextField();
+		//textField_13.setText("              ");
+		textField_13.setBounds(990, 316, 70, 27);
+		frame.getContentPane().add(textField_13);
+		textField_13.setColumns(10);
+		
+		textField_14 = new JTextField();
+		textField_14.setBounds(990, 346, 96, 27);
+		frame.getContentPane().add(textField_14);
+		textField_14.setColumns(10);
+		
+		textField_15 = new JTextField();
+		textField_15.setBounds(990, 376, 96, 27);
+		frame.getContentPane().add(textField_15);
+		textField_15.setColumns(10);
+		
+		textField_16 = new JTextField();
+		textField_16.setBounds(990, 406, 96, 27);
+		frame.getContentPane().add(textField_16);
+		textField_16.setColumns(10);
+		
+		
+		
+		textField_17 = new JTextField();
+		textField_17.setBounds(990, 286, 70, 27);
+		frame.getContentPane().add(textField_17);
+		textField_17.setColumns(10);
+		
+		JButton valider = new JButton("Valider");
+		valider.setBounds(1191, 15, 85, 27);
+		frame.getContentPane().add(valider);
+		
+		JLabel lblNewLabel_2 = new JLabel("N\u00B0 attest CDEAO");
+		lblNewLabel_2.setBounds(25, 436, 98, 27);
+		frame.getContentPane().add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Responsabilite civil");
+		lblNewLabel_3.setBounds(25, 466, 115, 27);
+		frame.getContentPane().add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("Pers. transport\u00E9");
+		lblNewLabel_4.setBounds(25, 496, 115, 27);
+		frame.getContentPane().add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("Prime Nette");
+		lblNewLabel_5.setBounds(25, 526, 115, 27);
+		frame.getContentPane().add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("Taxe");
+		lblNewLabel_6.setBounds(25, 556, 45, 27);
+		frame.getContentPane().add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("Fga");
+		lblNewLabel_7.setBounds(25, 586, 45, 27);
+		frame.getContentPane().add(lblNewLabel_7);
+		
+		JLabel lblNewLabel_8 = new JLabel("Prime Total");
+		lblNewLabel_8.setBounds(25, 616, 98, 27);
+		frame.getContentPane().add(lblNewLabel_8);
+		
+		textField_18 = new JTextField();
+		textField_18.setBounds(152, 436, 175, 27);
+		frame.getContentPane().add(textField_18);
+		textField_18.setColumns(10);
+		
+		textField_19 = new JTextField();
+		textField_19.setBounds(152, 466, 96, 27);
+		frame.getContentPane().add(textField_19);
+		textField_19.setColumns(10);
+		
+		textField_20 = new JTextField();
+		textField_20.setBounds(152, 496, 96, 27);
+		frame.getContentPane().add(textField_20);
+		textField_20.setColumns(10);
+		
+		textField_21 = new JTextField();
+		textField_21.setBounds(152, 526, 96, 27);
+		frame.getContentPane().add(textField_21);
+		textField_21.setColumns(10);
+		
+		textField_22 = new JTextField();
+		textField_22.setBounds(152, 556, 96, 27);
+		frame.getContentPane().add(textField_22);
+		textField_22.setColumns(10);
+		
+		textField_23 = new JTextField();
+		textField_23.setBounds(152, 586, 96, 27);
+		frame.getContentPane().add(textField_23);
+		textField_23.setColumns(10);
+		
+		textField_24 = new JTextField();
+		textField_24.setBounds(152, 616, 96, 27);
+		frame.getContentPane().add(textField_24);
+		textField_24.setColumns(10);
+		
+		JLabel lblNewLabel_10 = new JLabel("Date Rappel");
+		lblNewLabel_10.setBounds(305, 466, 79, 27);
+		frame.getContentPane().add(lblNewLabel_10);
+		
+		JLabel lblNewLabel_11 = new JLabel("Somme Factur\u00E9");
+		lblNewLabel_11.setBounds(305, 496, 98, 27);
+		frame.getContentPane().add(lblNewLabel_11);
+		
+		JLabel lblNewLabel_13 = new JLabel("Somme Encaiss\u00E9");
+		lblNewLabel_13.setBounds(305, 526, 106, 27);
+		frame.getContentPane().add(lblNewLabel_13);
+		
+		JButton calculer = new JButton("calculer");
+		calculer.setBounds(280, 586, 121, 27);
+		frame.getContentPane().add(calculer);
+		
+		textField_25 = new JTextField();
+		textField_25.setBounds(423, 496, 96, 27);
+		frame.getContentPane().add(textField_25);
+		textField_25.setColumns(10);
+		
+		textField_26 = new JTextField();
+		textField_26.setBounds(423, 526, 96, 27);
+		frame.getContentPane().add(textField_26);
+		textField_26.setColumns(10);
+		
+		JLabel lblNewLabel_14 = new JLabel("Brisglace");
+		lblNewLabel_14.setBounds(570, 466, 70, 27);
+		frame.getContentPane().add(lblNewLabel_14);
+		
+		JLabel lblNewLabel_15 = new JLabel("Marque");
+		lblNewLabel_15.setBounds(570, 496, 50, 27);
+		frame.getContentPane().add(lblNewLabel_15);
+		
+		JLabel lblNewLabel_16 = new JLabel("Type de vitre");
+		lblNewLabel_16.setBounds(570, 526, 78, 27);
+		frame.getContentPane().add(lblNewLabel_16);
+		
+		JLabel lblNewLabel_17 = new JLabel("Defense et recours");
+		lblNewLabel_17.setBounds(570, 586, 110, 27);
+		frame.getContentPane().add(lblNewLabel_17);
+		
+		JLabel lblNewLabel_18 = new JLabel("Avance et recours");
+		lblNewLabel_18.setBounds(570, 616, 100, 27);
+		frame.getContentPane().add(lblNewLabel_18);
+		
+		JLabel lblNewLabel_19 = new JLabel("Indiv cond.");
+		lblNewLabel_19.setBounds(570, 646, 90, 27);
+		frame.getContentPane().add(lblNewLabel_19);
+		
+		JLabel lblNewLabel_20 = new JLabel("Cdeao");
+		lblNewLabel_20.setBounds(570, 556, 45, 27);
+		frame.getContentPane().add(lblNewLabel_20);
+		
+		textField_27 = new JTextField();
+		textField_27.setBounds(680, 466, 96, 27);
+		frame.getContentPane().add(textField_27);
+		textField_27.setColumns(10);
+		
+		JComboBox comboBox_7 = new JComboBox();
+		comboBox_7.setBounds(680, 496, 121, 27);
+		frame.getContentPane().add(comboBox_7);
+		
+		JComboBox comboBox_8 = new JComboBox();
+		comboBox_8.setBounds(680, 526, 119, 27);
+		frame.getContentPane().add(comboBox_8);
+		
+		textField_28 = new JTextField();
+		textField_28.setBounds(680, 556, 96, 27);
+		frame.getContentPane().add(textField_28);
+		textField_28.setColumns(10);
+		
+		textField_29 = new JTextField();
+		textField_29.setBounds(680, 586, 96, 27);
+		frame.getContentPane().add(textField_29);
+		textField_29.setColumns(10);
+		
+		textField_30 = new JTextField();
+		textField_30.setBounds(680, 616, 96, 27);
+		frame.getContentPane().add(textField_30);
+		textField_30.setColumns(10);
+		
+		textField_31 = new JTextField();
+		textField_31.setBounds(680, 646, 96, 27);
+		frame.getContentPane().add(textField_31);
+		textField_31.setColumns(10);
+		
+		JLabel lblNewLabel_21 = new JLabel("Valeur du vehicule");
+		lblNewLabel_21.setBounds(872, 526, 110, 27);
+		frame.getContentPane().add(lblNewLabel_21);
+		
+		JLabel lblNewLabel_22 = new JLabel("Ann\u00E9e du vehichule");
+		lblNewLabel_22.setBounds(721, 586, 110, 27);
+		frame.getContentPane().add(lblNewLabel_22);
+		
+		JLabel lblNewLabel_23 = new JLabel("Vol");
+		lblNewLabel_23.setBounds(872, 586, 67, 27);
+		frame.getContentPane().add(lblNewLabel_23);
+		
+		JLabel lblNewLabel_24 = new JLabel("Incendie");
+		lblNewLabel_24.setBounds(872, 616, 67, 27);
+		frame.getContentPane().add(lblNewLabel_24);
+		
+		JLabel lblNewLabel_25 = new JLabel("Tourisme");
+		lblNewLabel_25.setBounds(872, 646, 60, 27);
+		frame.getContentPane().add(lblNewLabel_25);
+		
+		textField_32 = new JTextField();
+		textField_32.setBounds(1000, 526, 114, 27);
+		frame.getContentPane().add(textField_32);
+		textField_32.setColumns(10);
+		
+		textField_33 = new JTextField();
+		textField_33.setBounds(1000, 556, 114, 27);
+		frame.getContentPane().add(textField_33);
+		textField_33.setColumns(10);
+		
+		textField_34 = new JTextField();
+		textField_34.setBounds(1000, 586, 96, 27);
+		frame.getContentPane().add(textField_34);
+		textField_34.setColumns(10);
+		
+		textField_35 = new JTextField();
+		textField_35.setBounds(1000, 616, 96, 27);
+		frame.getContentPane().add(textField_35);
+		textField_35.setColumns(10);
+		
+		textField_36 = new JTextField();
+		textField_36.setBounds(1000, 646, 96, 27);
+		frame.getContentPane().add(textField_36);
+		textField_36.setColumns(10);
+		
+		JFormattedTextField formattedTextField_2 = new JFormattedTextField();
+		formattedTextField_2.setBounds(423, 466, 96, 27);
+		frame.getContentPane().add(formattedTextField_2);
+//		allButton = new JPanel();
+		frame.getContentPane();
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(Affaire_Nouvelle.class.getResource("/images/photo_2021-07-31_15-35-25.jpg")));
+		lblNewLabel.setBounds(0, -32, 1358, 743);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JMenuBar menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+		
+		JButton fermer = new JButton("Retour");
+		fermer.setIcon(new ImageIcon(Affaire_Nouvelle.class.getResource("/images/Go-back-icon (1).png")));
+		menuBar.add(fermer);
+		
+		JButton imprimer = new JButton("Imprimer");
+		imprimer.setIcon(new ImageIcon(Affaire_Nouvelle.class.getResource("/images/print-icon.png")));
+		menuBar.add(imprimer);
+		
+		JButton quittance = new JButton("Quittance");
+		menuBar.add(quittance);
+		
+		JButton proposition = new JButton("Proposition");
+		menuBar.add(proposition);
+		
+		JButton blm = new JButton("Lettre Mutation");
+		menuBar.add(blm);
+		
+		JButton cdeao = new JButton("CDEAO");
+		menuBar.add(cdeao);
+		fermer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Page_Accueil window = new Page_Accueil();
+				window.accueil.setVisible(true);
+				frame.hide();
+			}
+		});
+	}
+}

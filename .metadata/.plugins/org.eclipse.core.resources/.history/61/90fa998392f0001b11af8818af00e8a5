@@ -1,0 +1,118 @@
+package com.aby;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Dimension;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.JLabel;
+import javax.swing.JPopupMenu;
+import java.awt.Component;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import com.jgoodies.forms.factories.DefaultComponentFactory;
+import javax.swing.JMenuBar;
+import javax.swing.JTextArea;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
+public class Page_D_Accueil {
+
+	private JFrame frmHokenNoSekai;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Page_D_Accueil window = new Page_D_Accueil();
+							window.frmHokenNoSekai.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Page_D_Accueil() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmHokenNoSekai = new JFrame();
+		frmHokenNoSekai.setBackground(new Color(250, 235, 215));
+		frmHokenNoSekai.getContentPane().setBackground(new Color(255, 222, 173));
+		frmHokenNoSekai.setResizable(false);
+		frmHokenNoSekai.setPreferredSize(new Dimension(2147483647, 2147483647));
+		frmHokenNoSekai.setName("fenetreAccueil\r\n");
+		frmHokenNoSekai.getContentPane().setFont(new Font("Segoe Script", Font.PLAIN, 16));
+		frmHokenNoSekai.getContentPane().setLayout(null);
+		frmHokenNoSekai.setSize(new Dimension(2147483647, 2147483647));
+	//	frmHokenNoSekai.setSize(new Dimension(450, 497));
+		frmHokenNoSekai.setVisible(true);
+		frmHokenNoSekai.setFont(new Font("Bodoni MT", Font.BOLD | Font.ITALIC, 21));
+		frmHokenNoSekai.setForeground(Color.LIGHT_GRAY);
+		frmHokenNoSekai.setTitle("Hoken No Sekai");
+		//frmHokenNoSekai.setBounds(100, 100, 936, 600);
+		frmHokenNoSekai.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
+		JMenuBar menuBar = new JMenuBar();
+		frmHokenNoSekai.setJMenuBar(menuBar);
+		
+		JMenu mnNewMenu = new JMenu("New menu");
+		menuBar.add(mnNewMenu);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("New menu item");
+		mnNewMenu.add(mntmNewMenuItem);
+		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("New menu item");
+		mnNewMenu.add(mntmNewMenuItem_1);
+		
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("New menu item");
+		mnNewMenu.add(mntmNewMenuItem_2);
+		
+		JMenuItem mntmNewMenuItem_3 = new JMenuItem("New menu item");
+		mnNewMenu.add(mntmNewMenuItem_3);
+		
+		JMenu mnNewMenu_1 = new JMenu("New menu");
+		menuBar.add(mnNewMenu_1);
+		
+		JMenu mnNewMenu_2 = new JMenu("New menu");
+		menuBar.add(mnNewMenu_2);
+		
+		JMenu mnNewMenu_3 = new JMenu("New menu");
+		menuBar.add(mnNewMenu_3);
+	}
+	private static void addPopup(Component component, final JPopupMenu popup) {
+		component.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			public void mouseReleased(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			private void showMenu(MouseEvent e) {
+				popup.show(e.getComponent(), e.getX(), e.getY());
+			}
+		});
+	}
+}

@@ -1,0 +1,246 @@
+package com.aby;
+
+import java.awt.EventQueue;
+import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
+import com.toedter.calendar.JDateChooser;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import java.awt.Color;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+import javax.swing.JMenuBar;
+
+public class AssureListes extends JFrame {
+
+	/**
+	 * 
+	 */
+	//JFrame frame;
+	private static final long serialVersionUID = 1L;
+	
+	private JPanel contentPane;
+	private JTable table;
+	private JPanel allButtonPanel;
+
+	
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					for (LookAndFeelInfo info:UIManager.getInstalledLookAndFeels()){
+						if ("Nimbus".equals(info.getName())) {
+							UIManager.setLookAndFeel(info.getClassName());
+							break;
+						}
+					}
+				}catch (Exception e) {}	
+				try {
+					AssureListes frame = new AssureListes();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public AssureListes() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(AssureListes.class.getResource("/images/car.png")));
+		setForeground(Color.WHITE);
+		setTitle("Liste des Assur\u00E9s");
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		setBounds(100, 100, 900, 500);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JButton btnNewButton = new JButton("Retour");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Page_Accueil window=new Page_Accueil();
+				window.accueil.setVisible(true);
+				AssureListes.this.setDefaultCloseOperation(AssureListes.this.DISPOSE_ON_CLOSE);;
+				
+			}
+		});
+		btnNewButton.setIcon(new ImageIcon(AssureListes.class.getResource("/images/Go-back-icon (1).png")));
+		menuBar.add(btnNewButton);
+		
+		JButton btn_nf = new JButton("Nouvelle Affaire");
+		btn_nf.setIcon(new ImageIcon(AssureListes.class.getResource("/images/new-file-icon (1).png")));
+		menuBar.add(btn_nf);
+		
+		JButton btnNewButton_8 = new JButton("Imprimer");
+		btnNewButton_8.setIcon(new ImageIcon(AssureListes.class.getResource("/images/print-icon.png")));
+		menuBar.add(btnNewButton_8);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		
+		String[] entete = {"Opérateur","Numéro Attestation","Numéro Police","Assuré","Immatricule"};
+		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.X_AXIS));
+		table = new JTable();
+		table.setToolTipText("");
+		table.setEditingRow(0);
+		table.setEditingColumn(0);
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table.setFocusable(false);
+		table.setFocusTraversalKeysEnabled(false);
+		table.setCellSelectionEnabled(true);
+		table.setColumnSelectionAllowed(true);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+			},
+			entete
+		));
+		table.setBounds(48, 44, 654, 193);
+		JScrollPane scPane = new JScrollPane(table);
+		scPane.setBounds(new Rectangle(0, 0, 600, 510));
+		scPane.setColumnHeaderView(table.getTableHeader());
+//		contentPane.add(table.getTableHeader());
+		contentPane.add(scPane);
+		String[][] data = {{}};
+		
+		allButtonPanel = new JPanel();
+		allButtonPanel.setBackground(Color.WHITE);
+		contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.X_AXIS));
+//		contentPane.add(table.getTableHeader());
+		contentPane.add(scPane);
+		contentPane.add(allButtonPanel);
+		allButtonPanel.setLayout(null);
+		
+		JButton btn_renew = new JButton("Renouvellement");
+		btn_renew.setBounds(21, 41, 134, 21);
+		allButtonPanel.add(btn_renew);
+		
+		JButton btn_Duplicata = new JButton("Duplicata");
+		btn_Duplicata.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btn_Duplicata.setBounds(21, 73, 134, 21);
+		allButtonPanel.add(btn_Duplicata);
+		
+		JButton btn_edit = new JButton("Modifier");
+		btn_edit.setBounds(21, 72, 109, 21);
+		allButtonPanel.add(btn_edit);
+		
+		JButton btn_shareName = new JButton("Transfert Nom");
+		btn_shareName.setBounds(21, 103, 134, 21);
+		allButtonPanel.add(btn_shareName);
+		
+		JButton btn_rm = new JButton("Supprimer");
+		btn_rm.setBounds(21, 134, 134, 21);
+		allButtonPanel.add(btn_rm);
+		
+		JLabel lblNewLabel = new JLabel("Date de d\u00E9but :");
+		lblNewLabel.setBounds(21, 220, 83, 13);
+		allButtonPanel.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Date de fin :");
+		lblNewLabel_1.setBounds(21, 251, 83, 13);
+		allButtonPanel.add(lblNewLabel_1);
+		
+		JButton btn_filtrer = new JButton("FILTRER");
+		btn_filtrer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btn_filtrer.setBounds(21, 310, 134, 21);
+		allButtonPanel.add(btn_filtrer);
+		
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(105, 220, 80, 19);
+		allButtonPanel.add(dateChooser);
+		
+		JDateChooser dateChooser_1 = new JDateChooser();
+		dateChooser_1.setBounds(105, 245, 80, 19);
+		allButtonPanel.add(dateChooser_1);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(32, 279, 109, 21);
+		allButtonPanel.add(comboBox);
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		lblNewLabel_2.setIcon(new ImageIcon(AssureListes.class.getResource("/images/photo_2021-07-31_15-35-25.jpg")));
+		lblNewLabel_2.setBounds(-823, -13, 1036, 493);
+		allButtonPanel.add(lblNewLabel_2);
+		
+		
+		
+	}
+}

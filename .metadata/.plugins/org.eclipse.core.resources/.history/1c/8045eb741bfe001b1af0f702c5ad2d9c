@@ -1,0 +1,143 @@
+package com.aby;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.Toolkit;
+//import com.toedter.calendar.JMonthChooser;
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
+import javax.swing.table.DefaultTableModel;
+
+import com.toedter.calendar.JMonthChooser;
+
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JMenuBar;
+
+public class expiration_mensuelle {
+
+	JFrame frmExpirationMensuelle;
+	private JTable table;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					for (LookAndFeelInfo info:UIManager.getInstalledLookAndFeels()){
+						if ("Nimbus".equals(info.getName())) {
+							UIManager.setLookAndFeel(info.getClassName());
+							break;
+						}
+					}
+				}catch (Exception e) {}
+				
+				try {
+					expiration_mensuelle window = new expiration_mensuelle();
+					window.frmExpirationMensuelle.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public expiration_mensuelle() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmExpirationMensuelle = new JFrame();
+		frmExpirationMensuelle.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		frmExpirationMensuelle.setBackground(Color.WHITE);
+		frmExpirationMensuelle.setIconImage(Toolkit.getDefaultToolkit().getImage(expiration_mensuelle.class.getResource("/images/car.png")));
+		frmExpirationMensuelle.setTitle("Expiration Mensuelle");
+		frmExpirationMensuelle.setBounds(100, 100, 955, 550);
+		frmExpirationMensuelle.getContentPane().setLayout(null);
+		frmExpirationMensuelle.addWindowListener(new java.awt.event.WindowAdapter() {
+			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+				Page_Accueil window= new Page_Accueil();
+				window.accueil.setVisible(true);
+				frmExpirationMensuelle.dispose();
+			}
+		});
+		
+		
+		JMonthChooser monthChooser = new JMonthChooser();
+		monthChooser.setBounds(133, 71, 98, 20);
+		frmExpirationMensuelle.getContentPane().add(monthChooser);
+//		
+		JButton btnFiltrer = new JButton("Filtrer");
+		btnFiltrer.setBounds(261, 105, 89, 23);
+		frmExpirationMensuelle.getContentPane().add(btnFiltrer);
+		
+		
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+			},
+			new String[] {
+				"Immat", "Assure", "Police", "D\u00E9but", "Heure", "Ech\u00E9ance", "Chauffeur", "T\u00E9lephone"
+			}
+		));
+		JScrollPane scrollPane = new JScrollPane(table);
+		scrollPane.setColumnHeaderView(table.getTableHeader());
+		scrollPane.setBounds(6, 189, 739, 200);
+		frmExpirationMensuelle.getContentPane().add(scrollPane);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(expiration_mensuelle.class.getResource("/images/fond.jpg")));
+		lblNewLabel.setBounds(-139, 0, 1078, 511);
+		frmExpirationMensuelle.getContentPane().add(lblNewLabel);
+		
+		JMenuBar menuBar = new JMenuBar();
+		frmExpirationMensuelle.setJMenuBar(menuBar);
+		
+		JButton btnFermer = new JButton("Retour");
+		btnFermer.setIcon(new ImageIcon(expiration_mensuelle.class.getResource("/images/Go-back-icon (1).png")));
+		menuBar.add(btnFermer);
+		
+		JButton btnNewButton = new JButton("Imprimer");
+		btnNewButton.setIcon(new ImageIcon(expiration_mensuelle.class.getResource("/images/print-icon.png")));
+		menuBar.add(btnNewButton);
+		btnFermer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Page_Accueil window= new Page_Accueil();
+				window.accueil.setVisible(true);
+				frmExpirationMensuelle.dispose();
+			}
+		});
+		
+	}
+}

@@ -1,0 +1,55 @@
+package com.aby;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Dimension;
+
+public class Page_D_Accueil {
+
+	private JFrame frmHokenNoSekai;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Page_D_Accueil window = new Page_D_Accueil();
+					window.frmHokenNoSekai.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Page_D_Accueil() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmHokenNoSekai = new JFrame();
+		frmHokenNoSekai.setPreferredSize(new Dimension(2147483647, 2147483647));
+		frmHokenNoSekai.setName("fenetreAccueil\r\n");
+		frmHokenNoSekai.getContentPane().setFont(new Font("Segoe Script", Font.PLAIN, 16));
+		frmHokenNoSekai.setSize(new Dimension(2147483647, 2147483647));
+	//	frmHokenNoSekai.setSize(new Dimension(450, 497));
+		frmHokenNoSekai.setVisible(true);
+		frmHokenNoSekai.setFont(new Font("Bodoni MT", Font.BOLD | Font.ITALIC, 21));
+		frmHokenNoSekai.setForeground(Color.LIGHT_GRAY);
+		frmHokenNoSekai.setTitle("Hoken No Sekai");
+		//frmHokenNoSekai.setBounds(100, 100, 936, 600);
+		frmHokenNoSekai.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	}
+
+}

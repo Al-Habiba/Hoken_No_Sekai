@@ -1,0 +1,9 @@
+INDEX VERSION 1.131+C:\Users\HP\Documents\JAVA\Hoken no Sekai\.metadata\.plugins\org.eclipse.jdt.core
+1618433384.index
+4256104823.index
+1811518991.index
+3041441547.index
+3460880079.index
+3443495257.index
+449396220.index
+301227439.index
